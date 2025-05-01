@@ -1,4 +1,4 @@
-const queryParams = new URLSearchParams(window.location.search);
+/* const queryParams = new URLSearchParams(window.location.search);
 const id = queryParams.get('id');
 
 if (id) {
@@ -22,4 +22,14 @@ if (id) {
     });
 } else {
   console.error('No ID parameter found.');
-}
+} */
+fetch('XSSEOViewer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.open();
+    document.write(data);
+    document.close();
+  })
+  .catch(error => {
+    console.error('Error fetching viewer:', error);
+  });
