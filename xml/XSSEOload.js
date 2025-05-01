@@ -2,7 +2,7 @@ const queryParams = new URLSearchParams(window.location.search);
 const id = queryParams.get('id');
 
 if (id) {
-  fetch('XSSEOViewer.html' + id)
+  fetch('XSSEOViewer.html' + '?' + id)
     .then(response => response.text())
     .then(data => {
       try {
